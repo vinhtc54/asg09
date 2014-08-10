@@ -28,10 +28,13 @@ Exception Exception = null;
 		T max2 = a[0];
 		try {
 			for (int i = 1; i < a.length; i++){
-				if (max1.compareTo(a[i]) < 0)
-					max1 = a[i];
-				if (max2.compareTo(a[i]) < 0 && max1.compareTo(max2) < 0)
-					max2 = a[i];
+				if (max1.compareTo(a[i]) < 0){
+				if(a[i].compareTo(max2) > 0){
+						max1 = max2;
+						max2 = a[i];
+				}
+				else	max1 = a[i];
+			}
 			}
 		} catch (Exception e) {
 			System.out.println(e);
